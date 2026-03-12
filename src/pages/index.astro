@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/ui/Header.astro';
+import Footer from '../components/ui/Footer.astro';
+import Hero from '../components/ui/Hero.astro';
+import { homeData } from '../data/homeData';
+import heroImage from '../assets/imagenes/hero-home-principal.webp';
+
+// We map dynamic data
+const { hero, purpose } = homeData;
+---
+
+<BaseLayout title={`Inicio`} description={hero.description}>
+  <Header slot="header" />
+  
+  <main>
+    {/* Hero Section */}
+    <Hero 
+      badge={hero.badge}
+      title={hero.title}
+      description={hero.description}
+      image={heroImage}
+      height="large"
+    >
+      <Fragment slot="actions">
+        <a href={hero.ctaEmpresa.href} class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-lg text-white bg-primary hover:bg-primary-hover transition-all duration-300 shadow-lg hover:shadow-primary/30 hover:-translate-y-1">
+          {hero.ctaEmpresa.label}
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href={hero.ctaExterior.href} class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-lg text-dark bg-white hover:bg-gray-50 transition-all duration-300 shadow-lg mt-4 sm:mt-0 hover:-translate-y-1 ml-0 sm:ml-4">
+          {hero.ctaExterior.label}
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+        </a>
+      </Fragment>
+    </Hero>
+
+    {/* Propósito Section (from images references: "NUESTRO PROPÓSITO") */}
+    <section class="py-24 bg-light relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center max-w-3xl mx-auto">
+          {/* Decorative Cube SVG based on the client logo/brand */}
+          <div class="mx-auto w-20 h-20 text-primary mb-8 animate-pulse-slow">
+            <svg viewBox="0 0 100 100" fill="currentColor">
+              <path d="M50 0 L100 25 L100 75 L50 100 L0 75 L0 25 Z" opacity="0.9"/>
+              <path d="M50 0 L50 50 L100 25 Z" fill="#b00d11"/>
+              <path d="M50 50 L100 75 L50 100 L0 75 Z" fill="#D31216"/>
+              <path d="M0 25 L50 50 L50 100 L0 75 Z" fill="#e53935"/>
+            </svg>
+          </div>
+          
+          <h2 class="text-4xl md:text-5xl font-outfit font-extrabold text-dark mb-6 tracking-tight">
+            {purpose.title}
+          </h2>
+          <div class="w-24 h-1 bg-primary mx-auto mb-8 rounded-full"></div>
+          
+          <p class="text-xl md:text-2xl text-gray-700 leading-relaxed font-light">
+            {purpose.description}
+          </p>
+        </div>
+      </div>
+      
+      {/* Decorative background blocks */}
+      <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-red-50 rounded-full blur-3xl opacity-50 z-0"></div>
+      <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-gray-200 rounded-full blur-3xl opacity-50 z-0"></div>
+    </section>
+
+    {/* Brief split intro to both main services */}
+    <section class="py-0">
+      <div class="flex flex-col md:flex-row min-h-[50vh]">
+        {/* Unit 1: Empresas */}
+        <a href="/empresas" class="group flex-1 flex flex-col justify-center items-center p-12 lg:p-24 bg-white border-b md:border-b-0 md:border-r border-gray-100 hover:bg-gray-50 transition-colors duration-500 relative overflow-hidden text-center">
+          <div class="absolute inset-0 bg-primary/5 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></div>
+          <div class="relative z-10">
+            <h3 class="text-3xl font-bold text-dark mb-4 group-hover:text-primary transition-colors">JC Empresas</h3>
+            <p class="text-gray-600 mb-6 text-lg">Soluciones jurídicas y de gestión para empleadores.</p>
+            <span class="inline-flex items-center font-semibold text-primary">
+              Ir a Empresas <svg class="w-4 h-4 ml-1 group-hover:translate-x-2 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+        {/* Unit 2: Exterior */}
+        <a href="/colombianos-exterior" class="group flex-1 flex flex-col justify-center items-center p-12 lg:p-24 bg-white hover:bg-gray-50 transition-colors duration-500 relative overflow-hidden text-center">
+          <div class="absolute inset-0 bg-primary/5 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></div>
+          <div class="relative z-10">
+            <h3 class="text-3xl font-bold text-dark mb-4 group-hover:text-primary transition-colors">Colombianos en el Exterior</h3>
+            <p class="text-gray-600 mb-6 text-lg">Solucionamos trámites en Colombia sin que debas viajar.</p>
+            <span class="inline-flex items-center font-semibold text-primary">
+              Ir a Exterior <svg class="w-4 h-4 ml-1 group-hover:translate-x-2 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+  
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: .8;
+      transform: scale(1.05);
+    }
+  }
+</style>

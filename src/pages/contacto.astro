@@ -1,0 +1,265 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/ui/Header.astro';
+import Footer from '../components/ui/Footer.astro';
+import Hero from '../components/ui/Hero.astro';
+import FeatureCard from '../components/ui/FeatureCard.astro';
+import { Image } from 'astro:assets';
+import { contactoData } from '../data/contactoData';
+import heroImage from '../assets/imagenes/hero-contacto.webp';
+
+const { hero, pilares, contactInfo } = contactoData;
+---
+
+<BaseLayout title={hero.title} description={hero.description}>
+  <Header slot="header" />
+  
+  <main>
+    {/* Page Hero */}
+    <Hero 
+      title={hero.title}
+      subtitle={hero.subtitle}
+      description={hero.description}
+      image={heroImage}
+      height="small"
+      align="center"
+    />
+
+    {/* Section: Mensajes Clave de Marca (Pilares) */}
+    <section class="py-24 bg-light relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Principios que nos definen</h2>
+          <div class="w-16 h-1 bg-primary mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {pilares.map((pilar, index) => (
+            <div class="animate-fade-in-up" style={`animation-delay: ${index * 200}ms`}>
+              <FeatureCard 
+                title={pilar.title}
+                description={pilar.description}
+                highlight={true}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Section: Nuestro Equipo */}
+    <section class="py-24 bg-white relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 animate-fade-in-up">
+          <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Liderazgo y Equipo Legal</h2>
+          <div class="w-16 h-1 bg-primary mx-auto rounded-full"></div>
+          <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+            Nuestra fortaleza radica en la experiencia, pasión y compromiso de nuestros profesionales.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+          
+          {/* Claudia */}
+          <div class="flex flex-col items-center text-center animate-fade-in-up" style="animation-delay: 100ms;">
+            <div class="relative w-full max-w-sm mb-8">
+               <div class="absolute inset-0 bg-primary/10 rounded-3xl transform -translate-x-3 translate-y-3"></div>
+               <Image 
+                 src={import('../assets/imagenes/claudia-nunez-directora.webp')} 
+                 alt="Claudia Patricia Núñez Londoño" 
+                 class="relative rounded-3xl shadow-xl w-full object-cover aspect-[4/5]"
+               />
+            </div>
+            <h3 class="text-2xl font-bold text-primary mb-1">Claudia Patricia Núñez Londoño</h3>
+            <p class="text-xl text-gray-700 font-medium mb-4">Abogada & Directora</p>
+            <p class="text-gray-600 leading-relaxed text-sm">
+              Soy abogada especialista en dar solución definitiva a conflictos de carácter <strong>laboral, de seguridad social, civil y comercial</strong>. Mi misión es simplificar procesos complejos mediante estrategias preventivas y correctivas. Creemos firmemente en el contacto humano, la transparencia total y resultados tangibles.
+            </p>
+          </div>
+
+          {/* Luz Adriana */}
+          <div class="flex flex-col items-center text-center animate-fade-in-up" style="animation-delay: 200ms;">
+            <div class="relative w-full max-w-sm mb-8">
+               <div class="absolute inset-0 bg-gray-200 rounded-3xl transform translate-x-3 translate-y-3"></div>
+               <Image 
+                 src={import('../assets/imagenes/luz-adriana-nunez-comunicadora.webp')} 
+                 alt="Luz Adriana Núñez" 
+                 class="relative rounded-3xl shadow-xl w-full object-cover aspect-[4/5]"
+               />
+            </div>
+            <h3 class="text-2xl font-bold text-dark mb-1">Luz Adriana Núñez</h3>
+            <p class="text-xl text-gray-700 font-medium mb-4">Comunicaciones Corporativas</p>
+            <p class="text-gray-600 leading-relaxed text-sm">
+              Encargada de fortalecer el vínculo con nuestros clientes, garantizando una conexión humana, directa y transparente. Facilitar la comunicación efectiva es clave para un servicio excepcional.
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    {/* Section: Contact Form & Info */}
+    <section class="py-24 bg-light">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          
+          {/* Contact Info */}
+          <div>
+            <h2 class="text-3xl font-bold text-dark mb-6">Póngase en contacto</h2>
+            <p class="text-lg text-gray-600 mb-10">
+              Complete el formulario o utilice nuestros canales directos. Un asesor se comunicará con usted en la mayor brevedad posible.
+            </p>
+            
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div class="flex-shrink-0 w-12 h-12 bg-red-50 text-primary rounded-xl flex items-center justify-center mt-1">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                </div>
+                <div class="ml-4">
+                  <h3 class="text-lg font-bold text-dark">Sede Principal</h3>
+                  <p class="text-gray-600">{contactInfo.address}</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="flex-shrink-0 w-12 h-12 bg-red-50 text-primary rounded-xl flex items-center justify-center mt-1">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                </div>
+                <div class="ml-4">
+                  <h3 class="text-lg font-bold text-dark">Teléfono</h3>
+                  <p class="text-gray-600">{contactInfo.phone}</p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div class="flex-shrink-0 w-12 h-12 bg-red-50 text-primary rounded-xl flex items-center justify-center mt-1">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                </div>
+                <div class="ml-4">
+                  <h3 class="text-lg font-bold text-dark">Email</h3>
+                  <p class="text-gray-600">{contactInfo.email}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Form */}
+          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 shadow-sm animate-fade-in-up" style="animation-delay: 300ms;">
+            <form action="#" method="POST" class="space-y-6">
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="name" class="block text-sm font-medium text-gray-700">Nombre y Apellido</label>
+                  <input type="text" name="name" id="name" required class="mt-1 shadow-sm focus:ring-primary focus:border-primary block w-full sm:text-sm border-gray-300 rounded-md p-3 border border-gray-200">
+                </div>
+                <div>
+                  <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
+                  <input type="email" name="email" id="email" required class="mt-1 shadow-sm focus:ring-primary focus:border-primary block w-full sm:text-sm border-gray-300 rounded-md p-3 border border-gray-200">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="doc-type" class="block text-sm font-medium text-gray-700">Documento de identificación</label>
+                  <select id="doc-type" name="doc-type" required class="mt-1 shadow-sm focus:ring-primary focus:border-primary block w-full sm:text-sm border-gray-300 rounded-md p-3 border border-gray-200 bg-white">
+                    <option value="" disabled selected>Seleccione uno</option>
+                    <option value="CC">Cédula de Ciudadanía</option>
+                    <option value="CE">Cédula de Extranjería</option>
+                    <option value="NIT">NIT</option>
+                    <option value="Pasaporte">Pasaporte</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="doc-number" class="block text-sm font-medium text-gray-700">Número del documento</label>
+                  <input type="text" name="doc-number" id="doc-number" required class="mt-1 shadow-sm focus:ring-primary focus:border-primary block w-full sm:text-sm border-gray-300 rounded-md p-3 border border-gray-200">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                  <label for="city" class="block text-sm font-medium text-gray-700">Ciudad</label>
+                  <input type="text" name="city" id="city" required class="mt-1 shadow-sm focus:ring-primary focus:border-primary block w-full sm:text-sm border-gray-300 rounded-md p-3 border border-gray-200">
+                </div>
+                <div>
+                  <label for="country" class="block text-sm font-medium text-gray-700">País</label>
+                  <input type="text" name="country" id="country" required class="mt-1 shadow-sm focus:ring-primary focus:border-primary block w-full sm:text-sm border-gray-300 rounded-md p-3 border border-gray-200">
+                </div>
+                <div>
+                  <label for="phone" class="block text-sm font-medium text-gray-700">Celular</label>
+                  <input type="tel" name="phone" id="phone" required class="mt-1 shadow-sm focus:ring-primary focus:border-primary block w-full sm:text-sm border-gray-300 rounded-md p-3 border border-gray-200">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Servicios requeridos</label>
+                <div class="grid grid-cols-2 gap-3 text-sm text-gray-600">
+                  <label class="flex items-center cursor-pointer">
+                    <input type="checkbox" name="services" value="Información general" class="mr-2 h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                    Información general
+                  </label>
+                  <label class="flex items-center cursor-pointer">
+                    <input type="checkbox" name="services" value="Consulta" class="mr-2 h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                    Consulta
+                  </label>
+                  <label class="flex items-center cursor-pointer">
+                    <input type="checkbox" name="services" value="Solicitud de contacto" class="mr-2 h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                    Solicitud de contacto
+                  </label>
+                  <label class="flex items-center cursor-pointer">
+                    <input type="checkbox" name="services" value="Queja" class="mr-2 h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                    Queja
+                  </label>
+                  <label class="flex items-center cursor-pointer">
+                    <input type="checkbox" name="services" value="Reclamo" class="mr-2 h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                    Reclamo
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-700">Mensaje</label>
+                <textarea id="message" name="message" rows="3" class="mt-1 shadow-sm focus:ring-primary focus:border-primary block w-full sm:text-sm border-gray-300 rounded-md p-3 border border-gray-200"></textarea>
+              </div>
+
+              <div class="flex items-start">
+                <div class="flex-items-center h-5">
+                  <input id="privacy" name="privacy" type="checkbox" required class="focus:ring-primary h-4 w-4 text-primary border-gray-300 rounded">
+                </div>
+                <div class="ml-3 text-sm">
+                  <label for="privacy" class="font-medium text-gray-700 cursor-pointer">He leído y acepto el aviso legal, la política de privacidad y las condiciones de consulta, peticiones, quejas y reclamos</label>
+                </div>
+              </div>
+
+              <div>
+                <button type="submit" class="w-full md:w-auto px-8 flex justify-center py-3 border border-transparent rounded-md shadow-sm text-sm font-bold text-white bg-dark hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dark transition-colors">
+                  Enviar
+                </button>
+              </div>
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+</style>

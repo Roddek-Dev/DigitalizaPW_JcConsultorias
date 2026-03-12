@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/ui/Header.astro';
+import Footer from '../components/ui/Footer.astro';
+---
+
+<BaseLayout title="Aviso Legal | JC Consultorías" description="Términos y condiciones de uso del sitio web de JC Consultorías y Servicios S.A.S.">
+  <Header slot="header" />
+  
+  <main class="py-24 bg-light min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 mt-10">
+      <h1 class="text-3xl md:text-5xl font-outfit font-extrabold text-dark mb-8 tracking-tight">Aviso Legal y Términos de Uso</h1>
+      <div class="w-16 h-1 bg-primary mb-10 rounded-full"></div>
+      
+      <div class="prose prose-lg text-gray-700 max-w-none">
+        
+        <h2 class="text-2xl font-bold text-dark mt-10 mb-4">1. Jurisdicción</h2>
+        <p>
+          Este sitio web y sus términos de uso se rigen por las leyes de la República de Colombia. Cualquier controversia será resuelta por las autoridades colombianas competentes.
+        </p>
+
+        <h2 class="text-2xl font-bold text-dark mt-10 mb-4">2. Naturaleza del Servicio Web</h2>
+        <p>
+           La información proporcionada en esta página web, incluidos artículos, guías y descripciones de servicios, es <strong>estrictamente orientativa e informativa</strong>. En ningún caso constituye una prestación de servicio legal formal, ni reemplaza una consulta o asesoría jurídica o administrativa personalizada.
+        </p>
+
+        <h2 class="text-2xl font-bold text-dark mt-10 mb-4">3. Propiedad Intelectual</h2>
+        <p>
+          Todo el contenido de este sitio web, incluyendo textos, diseños, logotipos, imágenes y estructura, es propiedad exclusiva de <strong>JC Consultorías y Servicios S.A.S.</strong> Queda estrictamente <strong>prohibida la reproducción, modificación o explotación comercial</strong> de estos contenidos por parte de terceros sin autorización previa y por escrito.
+        </p>
+
+        <h2 class="text-2xl font-bold text-dark mt-10 mb-4">4. Limitación de Responsabilidad</h2>
+        <p>
+          <strong>JC Consultorías y Servicios S.A.S.</strong> no asume responsabilidad alguna por:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 mt-4">
+          <li>El contenido de enlaces a terceros (links externos) que pudieran aparecer en el sitio.</li>
+          <li>Posibles daños derivados de virus informáticos u otras alteraciones sufridas por el usuario, recayendo en este último la responsabilidad de navegar con herramientas actualizadas de seguridad.</li>
+          <li>Decisiones tomadas basadas unicamente en información provista en esta plataforma.</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  
+  <Footer slot="footer" />
+</BaseLayout>

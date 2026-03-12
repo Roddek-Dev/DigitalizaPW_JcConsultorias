@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/ui/Header.astro';
+import Footer from '../components/ui/Footer.astro';
+---
+
+<BaseLayout title="Política de Privacidad | JC Consultorías" description="Política de privacidad y tratamiento de datos personales de JC Consultorías y Servicios S.A.S.">
+  <Header slot="header" />
+  
+  <main class="py-24 bg-light min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 mt-10">
+      <h1 class="text-3xl md:text-5xl font-outfit font-extrabold text-dark mb-8 tracking-tight">Política de Privacidad y Tratamiento de Datos</h1>
+      <div class="w-16 h-1 bg-primary mb-10 rounded-full"></div>
+      
+      <div class="prose prose-lg text-gray-700 max-w-none">
+        <p>
+          En <strong>JC Consultorías y Servicios S.A.S.</strong>, respetamos su privacidad y estamos comprometidos con la protección de sus datos personales, en estricto cumplimiento de la Ley 1581 de 2012 (Hábeas Data) y sus Decretos reglamentarios en Colombia.
+        </p>
+        
+        <h2 class="text-2xl font-bold text-dark mt-10 mb-4">1. Identificación del Responsable</h2>
+        <p>
+          Razón Social: JC Consultorías y Servicios S.A.S.<br>
+          Sede Principal: Calle 19 N. 8-34, Oficina 12-03, Edificio Corporación Financiera de Occidente, Pereira - Risaralda.<br>
+          Correo: info@jcconsultoriasyservicios.com.co<br>
+          WhatsApp: +57 320 449 3669
+        </p>
+
+        <h2 class="text-2xl font-bold text-dark mt-10 mb-4">2. Finalidad de la Recolección de Datos</h2>
+        <p>
+          Los datos personales que se recogen a través de nuestros formularios (como "Póngase en contacto", "Soy Empresa", o "Soy Colombiano en el Exterior") se utilizarán única y exclusivamente para las siguientes finalidades:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 mt-4">
+          <li>Proveer la información y los servicios legales o administrativos solicitados.</li>
+          <li>Comunicarnos con usted para dar respuesta a sus consultas y requerimientos.</li>
+          <li>Enviar información relevante sobre actualizaciones legales o novedades de la firma.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-dark mt-10 mb-4">3. Derechos del Titular</h2>
+        <p>
+          Como titular de la información, usted tiene derecho a conocer, actualizar, rectificar y suprimir sus datos personales en cualquier momento. Para ejercer estos derechos, puede comunicarse a nuestro correo oficial: <code>info@jcconsultoriasyservicios.com.co</code>.
+        </p>
+        
+        <h2 class="text-2xl font-bold text-dark mt-10 mb-4">4. Seguridad de los Datos</h2>
+        <p>
+          Nuestra plataforma adopta las medidas técnicas, humanas y administrativas necesarias para garantizar la seguridad de los registros, evitando su alteración, pérdida, consulta, uso o acceso no autorizado o fraudulento.
+        </p>
+      </div>
+    </div>
+  </main>
+  
+  <Footer slot="footer" />
+</BaseLayout>

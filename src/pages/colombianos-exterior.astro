@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/ui/Header.astro';
+import Footer from '../components/ui/Footer.astro';
+import Hero from '../components/ui/Hero.astro';
+import FeatureCard from '../components/ui/FeatureCard.astro';
+import { exteriorData } from '../data/exteriorData';
+import heroImage from '../assets/imagenes/banner-servicios-exterior.webp';
+
+// Dynamic import of images for services
+const images = import.meta.glob<{ default: ImageMetadata }>('../assets/imagenes/*.webp', { eager: true });
+
+const { hero, services, bridgeMessage } = exteriorData;
+---
+
+<BaseLayout title={hero.title} description={hero.description}>
+  <Header slot="header" />
+  
+  <main>
+    {/* Page Hero */}
+    <Hero 
+      badge="Unidad 2"
+      title={hero.title}
+      subtitle={hero.subtitle}
+      description={hero.description}
+      image={heroImage}
+      height="small"
+      align="center"
+    />
+
+    {/* Section: Bridge Message / Propuesta de Valor Específica */}
+    <section class="py-20 bg-light border-b border-gray-200 relative overflow-hidden">
+      {/* Decorative airplane or globe accent logic via CSS/SVG can go here, using simple abstract shapes for now */}
+      <div class="absolute top-0 right-0 p-12 opacity-5 pointer-events-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-96 h-96" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+      </div>
+
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <h2 class="text-3xl md:text-5xl font-outfit font-extrabold text-dark mb-8">
+          {bridgeMessage.title}
+        </h2>
+        <div class="space-y-6 text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+          {bridgeMessage.description.map(paragraph => (
+            <p>{paragraph}</p>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Section: Soluciones en Colombia (Services) */}
+    <section class="py-24 bg-white relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-16 md:text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Soluciones en Colombia estés donde estés</h2>
+          <div class="w-16 h-1 bg-primary mx-auto mb-6 rounded-full md:mx-auto"></div>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Evite viajes innecesarios y confíe sus trámites a nuestro equipo de especialistas.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {services.map((service, index) => {
+            const imagePath = `../assets/imagenes/${service.image}.webp`;
+            const imageMetadata = images[imagePath]?.default;
+            return (
+              <div class="animate-fade-in-up" style={`animation-delay: ${index * 200}ms`}>
+                <FeatureCard 
+                  title={service.title}
+                  description={service.description}
+                  image={imageMetadata?.src}
+                />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+
+    {/* CTA Final */}
+    <section class="py-20 bg-dark text-white text-center relative overflow-hidden">
+      <div class="absolute inset-0 bg-primary opacity-90 mix-blend-multiply"></div>
+      <div class="relative z-10 max-w-3xl mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">¿Necesita asistencia legal en Colombia?</h2>
+        <p class="text-xl mb-10 text-red-100">Nuestro equipo está listo para representarlo con total transparencia y comunicación constante.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contacto" class="inline-flex items-center justify-center px-8 py-3 rounded-md bg-white text-primary font-bold hover:bg-gray-100 transition-colors shadow-lg">
+            Consultar mi caso
+            <svg class="w-5 h-5 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+</style>

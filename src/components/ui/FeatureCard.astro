@@ -1,0 +1,62 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  icon?: string;
+  image?: string;
+  highlight?: boolean;
+}
+
+const { title, description, icon, image, highlight = false } = Astro.props;
+---
+
+<div class:list={[
+    "group flex flex-col h-full bg-white rounded-2xl p-8 border transition-all duration-300 relative overflow-hidden",
+    highlight 
+      ? 'border-red-100 shadow-md hover:shadow-xl hover:border-red-200' 
+      : 'border-gray-100 shadow-sm hover:shadow-md hover:border-gray-200'
+  ]}
+>
+  {/* Optional Image */}
+  {image && (
+    <div class="absolute inset-0 z-0">
+      <img src={image} alt={title} class="w-full h-full object-cover opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-300 pointer-events-none" />
+    </div>
+  )}
+
+  <div class="relative z-10 flex flex-col h-full">
+    {/* Red square accent decoration inspired by the logo */}
+    {!highlight && (
+      <div class="absolute top-0 right-0 w-16 h-16 overflow-hidden rounded-tr-2xl">
+        <div class="absolute top-[-30px] right-[-30px] w-16 h-16 bg-primary/10 rotate-45 transform origin-bottom-left transition-transform group-hover:scale-150 duration-500"></div>
+      </div>
+    )}
+
+    {/* Icon Area */}
+    <div class={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 text-2xl shadow-inner ${
+      highlight ? 'bg-white/20 text-primary' : 'bg-red-50 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300'
+    }`}>
+      {icon ? (
+        <span set:html={icon} />
+      ) : (
+        /* Default generic cube/check icon */
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      )}
+    </div>
+
+    {/* Title */}
+    <h3 class="text-xl font-bold text-dark mb-4 transition-colors group-hover:text-primary">
+      {title}
+    </h3>
+
+    {/* Description */}
+    {description && (
+      <p class="text-gray-600 leading-relaxed flex-grow">
+        {description}
+      </p>
+    )}
+  </div>
+</div>
+```

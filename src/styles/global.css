@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #D31216;
+  --color-primary-hover: #b00d11;
+  --color-dark: #111111;
+  --color-light: #FAFAFA;
+  
+  --font-sans: "Inter", "Outfit", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-light text-dark font-sans antialiased overflow-x-hidden;
+  }
+}
