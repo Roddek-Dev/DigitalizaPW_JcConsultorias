@@ -51,17 +51,14 @@ const { hero, pilares, contactInfo } = contactoData;
     <section class="py-24 bg-white relative overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16 animate-fade-in-up">
-          <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Liderazgo y Equipo Legal</h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Liderazgo que genera confianza</h2>
           <div class="w-16 h-1 bg-primary mx-auto rounded-full"></div>
-          <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-            Nuestra fortaleza radica en la experiencia, pasión y compromiso de nuestros profesionales.
-          </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+        <div class="grid grid-cols-1 items-center justify-items-center mb-16">
           
           {/* Claudia */}
-          <div class="flex flex-col items-center text-center animate-fade-in-up" style="animation-delay: 100ms;">
+          <div class="flex flex-col items-center text-center animate-fade-in-up max-w-2xl mx-auto" style="animation-delay: 100ms;">
             <div class="relative w-full max-w-sm mb-8">
                <div class="absolute inset-0 bg-primary/10 rounded-3xl transform -translate-x-3 translate-y-3"></div>
                <Image 
@@ -72,28 +69,35 @@ const { hero, pilares, contactInfo } = contactoData;
             </div>
             <h3 class="text-2xl font-bold text-primary mb-1">Claudia Patricia Núñez Londoño</h3>
             <p class="text-xl text-gray-700 font-medium mb-4">Abogada & Directora</p>
-            <p class="text-gray-600 leading-relaxed text-sm">
-              Soy abogada especialista en dar solución definitiva a conflictos de carácter <strong>laboral, de seguridad social, civil y comercial</strong>. Mi misión es simplificar procesos complejos mediante estrategias preventivas y correctivas. Creemos firmemente en el contacto humano, la transparencia total y resultados tangibles.
-            </p>
-          </div>
-
-          {/* Luz Adriana */}
-          <div class="flex flex-col items-center text-center animate-fade-in-up" style="animation-delay: 200ms;">
-            <div class="relative w-full max-w-sm mb-8">
-               <div class="absolute inset-0 bg-gray-200 rounded-3xl transform translate-x-3 translate-y-3"></div>
-               <Image 
-                 src={import('../assets/imagenes/luz-adriana-nunez-comunicadora.webp')} 
-                 alt="Luz Adriana Núñez" 
-                 class="relative rounded-3xl shadow-xl w-full object-cover aspect-[4/5]"
-               />
-            </div>
-            <h3 class="text-2xl font-bold text-dark mb-1">Luz Adriana Núñez</h3>
-            <p class="text-xl text-gray-700 font-medium mb-4">Comunicaciones Corporativas</p>
-            <p class="text-gray-600 leading-relaxed text-sm">
-              Encargada de fortalecer el vínculo con nuestros clientes, garantizando una conexión humana, directa y transparente. Facilitar la comunicación efectiva es clave para un servicio excepcional.
+            <p class="text-gray-600 leading-relaxed text-base">
+              Abogada especializada en la solución estratégica de asuntos laborales, de seguridad social, civiles y comerciales. Su enfoque combina prevención, gestión y resolución efectiva, permitiendo a empresas y personas tomar decisiones seguras y bien respaldadas. Como directora, lidera una firma orientada a simplificar lo complejo, con una visión clara: ofrecer soluciones reales, prácticas y oportunas, basadas en el conocimiento jurídico y la experiencia aplicada.
             </p>
           </div>
           
+        </div>
+
+        {/* Nuevo bloque de texto */}
+        <div class="max-w-4xl mx-auto text-center animate-fade-in-up" style="animation-delay: 200ms;">
+          <h3 class="text-3xl font-bold text-dark mb-6">Un equipo que respalda cada solución</h3>
+          <p class="text-lg text-gray-600 mb-8">
+            Contamos con un equipo de profesionales con experiencia y una red de aliados estratégicos que nos permite brindar un servicio integral, ágil y confiable.
+          </p>
+          <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 mb-8 inline-block text-left w-full sm:w-auto mx-auto shadow-sm">
+            <h4 class="text-xl font-bold text-primary mb-4 text-center sm:text-left">Acompañamos:</h4>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span><strong>Empresas en Colombia</strong>, en sus necesidades legales, especialmente en el ámbito laboral y de seguridad social.</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span><strong>Colombianos en el exterior</strong>, en la gestión de sus trámites legales y administrativos en Colombia, sin necesidad de desplazarse.</span>
+              </li>
+            </ul>
+          </div>
+          <p class="text-xl font-medium text-dark italic">
+            "Nuestro compromiso es claro: calidad, cercanía y resultados tangibles en cada gestión."
+          </p>
         </div>
       </div>
     </section>

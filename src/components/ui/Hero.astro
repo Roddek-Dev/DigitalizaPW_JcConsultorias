@@ -46,7 +46,7 @@ const alignClass = align === 'center' ? 'items-center text-center' : 'items-star
   <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
     <div class={`max-w-3xl ${align === 'center' ? 'mx-auto' : ''}`}>
       {badge && (
-        <span class="inline-block py-1 px-3 rounded-full bg-primary/20 border border-primary text-red-100 text-sm font-semibold tracking-wider mb-6 animate-fade-in-up">
+        <span class="inline-block py-1 px-3 md:px-4 rounded-full bg-primary/20 border border-primary text-red-100 text-base font-semibold tracking-wider mb-6 animate-fade-in-up">
           {badge}
         </span>
       )}
@@ -56,13 +56,13 @@ const alignClass = align === 'center' ? 'items-center text-center' : 'items-star
       </h1>
       
       {subtitle && (
-        <h2 class="text-xl md:text-3xl text-gray-200 font-medium mb-6 animate-fade-in-up" style="animation-delay: 200ms;">
+        <h2 class={`text-xl md:text-3xl text-gray-200 font-medium mb-6 animate-fade-in-up ${align === 'center' ? 'mx-auto' : ''}`} style="animation-delay: 200ms;">
           {subtitle}
         </h2>
       )}
       
       {description && (
-        <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl leading-relaxed animate-fade-in-up" style="animation-delay: 300ms;">
+        <p class={`text-lg md:text-xl text-gray-300 mb-8 max-w-2xl leading-relaxed animate-fade-in-up ${align === 'center' ? 'mx-auto' : ''}`} style="animation-delay: 300ms;">
           {description}
         </p>
       )}

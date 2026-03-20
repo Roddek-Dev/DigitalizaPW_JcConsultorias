@@ -21,11 +21,11 @@ export const exteriorData: ExteriorData = {
   hero: {
     title: "JC Colombianos en el Exterior",
     subtitle: "Conectamos a colombianos en el exterior con soluciones jurídicas y administrativas en Colombia.",
-    description: "Solucionamos trámites legales y administrativos en Colombia sin que tengas que viajar."
+    description: "Gestionamos trámites legales y administrativos en Colombia sin que tengas que viajar."
   },
   services: [
     {
-      title: "Trámites de Pensiones",
+      title: "Pensiones",
       description: "Asesoramos a colombianos en el exterior para resolver inconsistencias y tomar las mejores decisiones para gestionar su pensión de invalidez, vejez, sobrevivencia y pensión familiar desde cualquier país.",
       image: "asesoria-pensiones"
     },

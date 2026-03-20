@@ -19,7 +19,6 @@ const { hero, services, bridgeMessage } = exteriorData;
   <main>
     {/* Page Hero */}
     <Hero 
-      badge="Unidad 2"
       title={hero.title}
       subtitle={hero.subtitle}
       description={hero.description}
@@ -70,6 +69,7 @@ const { hero, services, bridgeMessage } = exteriorData;
                   title={service.title}
                   description={service.description}
                   image={imageMetadata?.src}
+                  titleClass="text-2xl"
                 />
               </div>
             );

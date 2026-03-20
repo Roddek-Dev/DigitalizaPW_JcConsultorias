@@ -15,8 +15,8 @@ export interface HomeData {
 export const homeData: HomeData = {
   hero: {
     badge: "Soluciones en Colombia",
-    title: "Gestionamos soluciones en Colombia para empresas y colombianos en el exterior",
-    description: "Simplificamos trámites legales, empresariales y administrativos en Colombia mediante acompañamiento experto, tecnología y gestión directa.",
+    title: "Gestionamos soluciones para Empresas en Colombia y para Colombianos en el Exterior.",
+    description: "Brindamos asesoría legal a empresas en Colombia y acompañamos a colombianos en el exterior en sus trámites en el país.",
     ctaEmpresa: { label: "SOY EMPRESA", href: "/empresas" },
     ctaExterior: { label: "SOY COLOMBIANO EN EL EXTERIOR", href: "/colombianos-exterior" }
   },

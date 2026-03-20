@@ -19,9 +19,9 @@ export const contactoData = {
     }
   ],
   contactInfo: {
-    address: "Cl. 19 #834, Pereira, Risaralda, Colombia",
+    address: "Cl. 19 #934, oficina 701, Pereira, Risaralda, Colombia",
     phone: "+57 3204493669",
-    email: "jcconsultoriasyservicios@gmail.com",
+    email: "info@jcconsultoriasyservicios.com",
     schedule: "Lunes a Viernes"
   }
 };
