@@ -26,21 +26,22 @@ const { hero, pilares, contactInfo } = contactoData;
     />
 
     {/* Section: Mensajes Clave de Marca (Pilares) */}
-    <section class="py-24 bg-light relative overflow-hidden">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section class="py-24 bg-primary relative overflow-hidden text-white w-full">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Principios que nos definen</h2>
-          <div class="w-16 h-1 bg-primary mx-auto rounded-full"></div>
+          <h2 class="text-4xl md:text-5xl font-extrabold font-outfit text-white">Principios que nos definen</h2>
+          <div class="w-16 h-1 bg-white mx-auto mt-6 mb-2 rounded-full"></div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 justify-items-center items-start">
           {pilares.map((pilar, index) => (
-            <div class="animate-fade-in-up" style={`animation-delay: ${index * 200}ms`}>
-              <FeatureCard 
-                title={pilar.title}
-                description={pilar.description}
-                highlight={true}
-              />
+            <div class="flex flex-col items-center text-center animate-fade-in-up group w-full" style={`animation-delay: ${index * 150}ms`}>
+              {pilar.icon && (
+                <div class="w-auto h-auto min-h-[5rem] flex items-center justify-center mb-6 text-white transition-transform duration-300 transform group-hover:scale-110 group-hover:-translate-y-2 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
+                  <Fragment set:html={pilar.icon} />
+                </div>
+              )}
+              <h3 class="text-lg md:text-xl font-bold leading-tight px-2 text-white mt-auto" set:html={pilar.title} />
             </div>
           ))}
         </div>
