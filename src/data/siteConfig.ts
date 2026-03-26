@@ -7,7 +7,7 @@ export const siteConfig = {
   address: "Cl. 19 #934, oficina 701, Pereira, Risaralda, Colombia",
   lawyer: "CLAUDIA PATRICIA NÚÑEZ LONDOÑO - Abogada",
   social: {
-    facebook: "https://www.facebook.com/profile.php?id=100078057721523",
+    facebook: "https://www.facebook.com/share/1DmfsNQVKP/",
     instagram: "https://www.instagram.com/jcconsultoriasyservicios/",
     youtube: "",
     linkedin: ""
